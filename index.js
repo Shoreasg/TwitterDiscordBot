@@ -49,7 +49,6 @@ async function setupStreamTwitter() {
     stream.on(
       // Emitted when a Twitter payload (a tweet or not, given the endpoint).
       ETwitterStreamEvent.Data, async tweet => {
-        console.log(tweet);
         if (tweet.data.referenced_tweets === undefined) {
           sendMessage(tweet.data.id, client);
         }
